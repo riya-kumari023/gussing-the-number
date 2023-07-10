@@ -14,9 +14,8 @@ while(True):
     else:
         print("\nCongratulations u guess the correct number....||| ")
         break
-print("u guess this number in \t ")
-print(atmpt )
-print("\tattempts")
+print(f"u guess this number in {atmpt} attempts")
+print("attempts")
 if(atmpt>1 and atmpt<=3):
       print("suberb")
 elif(atmpt>3 and atmpt<=5):
@@ -27,3 +26,10 @@ elif(atmpt>10 and atmpt<=15):
        print("good")
 else:
        print("improve ur self|||||")
+with open("highestscore.txt","r") as f:
+     highestscore = int(f.read())
+if atmpt<highestscore :
+     print("you have jst broken the highest score..........")
+     with open("highestscore.txt","w") as f:
+          f.write(str(atmpt))
+          
